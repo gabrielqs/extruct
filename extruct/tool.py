@@ -1,6 +1,7 @@
 import argparse
 import json
 import requests
+import sys
 
 import extruct
 from extruct import SYNTAXES
@@ -24,6 +25,7 @@ def metadata_from_url(url, syntaxes=SYNTAXES, uniform=False,
 
 
 def main(args=None):
+    sys.setrecursionlimit(1500)
     parser = argparse.ArgumentParser(prog='extruct', description=__doc__)
     arg = parser.add_argument
     arg('url', help='The target URL')
